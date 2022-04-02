@@ -46,19 +46,14 @@ jobs:
         env:
           GH_TOKEN: ${{ secrets.ACCESS_TOKEN }}
 
-      # step5: cleanup artifacts
-      - name: cleanup artifacts
-        run: |
-          npx rimraf "release"
-
-      # step6: upload artifacts
+      # step5: upload artifacts
       - name: upload artifacts
         uses: actions/upload-artifact@v2
         with:
           name: ${{ matrix.os }}
           path: ${{ github.workspace }}/release
 
-      # step7: create release
+      # step6: create release
       - name: release
         uses: softprops/action-gh-release@v1
         if: startsWith(github.ref, 'refs/tags/')
