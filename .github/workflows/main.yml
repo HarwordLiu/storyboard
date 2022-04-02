@@ -45,16 +45,10 @@ jobs:
         env:
           GH_TOKEN: ${{ secrets.ACCESS_TOKEN }}
 
-      # step5: cleanup artifacts in dist_electron
-      - name: cleanup artifacts for windows
-        if: matrix.os == 'windows-latest'
+      # step5: cleanup artifacts
+      - name: cleanup artifacts
         run: |
-          npx rimraf "release/!(*.exe)"
-
-      - name: cleanup artifacts for macosZ
-        if: matrix.os == 'macos-latest'
-        run: |
-          npx rimraf "release/!(*.dmg)"
+          npx rimraf "release"
 
       # step6: upload artifacts
       - name: upload artifacts
