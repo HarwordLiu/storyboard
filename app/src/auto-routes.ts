@@ -7,36 +7,36 @@
  */
 
 /** 默认路由配置 */
-const DEFAULT_ROUTE_CONFIG: Partial<RouteConfig> = {}
+const DEFAULT_ROUTE_CONFIG: Partial<RouteConfig> = {};
 
-const pages = require.context('@/src/views', true, /\/auto\.routes\.tsx?$/)
+const pages = require.context('@/src/views', true, /\/auto\.routes\.tsx?$/);
 
 /** 以 name 为 key 的路由 Map */
-const routes: Map<string, RouteConfig> = new Map()
+const routes: Map<string, RouteConfig> = new Map();
 
 pages.keys().forEach((path) => {
-  const conf: RouteConfig | RouteConfig[] = pages(path).default
-  flatRoutes(conf)
-})
+  const conf: RouteConfig | RouteConfig[] = pages(path).default;
+  flatRoutes(conf);
+});
 
 function flatRoutes(routes: RouteConfig | RouteConfig[], parent?: RouteConfig) {
-  const routesH = Array.isArray(routes) ? routes : [routes]
+  const routesH = Array.isArray(routes) ? routes : [routes];
 
   routesH.forEach((conf) => {
     if (parent) {
-      conf.parentNamePath = parent.parentNamePath ? parent.parentNamePath.concat(parent.name) : [parent.name]
-      conf.parent = parent
+      conf.parentNamePath = parent.parentNamePath ? parent.parentNamePath.concat(parent.name) : [parent.name];
+      conf.parent = parent;
     }
 
     if (Array.isArray(conf.routes) && conf.routes.length) {
       // if (conf.path) {
       //   console.warn(`路由配置异常 [${conf.name}]：配有 routes 子路由的情况下不应存在 path 字段`)
       // }
-      flatRoutes(conf.routes, conf)
+      flatRoutes(conf.routes, conf);
     } else {
     }
-    addRouteConfig(Object.assign({}, DEFAULT_ROUTE_CONFIG, conf))
-  })
+    addRouteConfig(Object.assign({}, DEFAULT_ROUTE_CONFIG, conf));
+  });
 }
 
 /**
@@ -44,7 +44,7 @@ function flatRoutes(routes: RouteConfig | RouteConfig[], parent?: RouteConfig) {
  * @param conf
  */
 function addRouteConfig(conf: RouteConfig) {
-  routes.set(conf.name, conf)
+  routes.set(conf.name, conf);
 }
 
-export default routes
+export default routes;

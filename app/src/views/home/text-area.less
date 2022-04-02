@@ -1,0 +1,24 @@
+@import '~@/src/styles/_var.less';
+.text-layout {
+  height: 100%;
+  .text-content {
+    height: 100%;
+    display: flex;
+    display: -webkit-flex;
+  }
+  .right {
+    overflow: auto;
+    height: 100%;
+    width: 45%;
+    overscroll-behavior: contain;
+    -ms-scroll-chaining: contain;
+  }
+  .left {
+    height: 100%;
+    width: 10%;
+    float: left;
+  }
+  .center {
+    width: 45%;
+  }
+}

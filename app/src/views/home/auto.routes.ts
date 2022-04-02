@@ -2,9 +2,8 @@ const routes: RouteConfig[] = [
   {
     name: 'Home',
     path: '/',
-    redirectTo: '/demo?form=home',
     windowOptions: {
-      title: 'App Home (redirect to demo)',
+      title: 'App Home',
       width: 1200,
       height: 800,
       minWidth: 800,
@@ -17,6 +16,6 @@ const routes: RouteConfig[] = [
       openDevTools: true,
     },
   },
-]
+];
 
-export default routes
+export default routes;
