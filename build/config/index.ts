@@ -1,8 +1,10 @@
-import path from 'path'
+import path from 'path';
 
-import { COMMON_ENV, env } from './env.config'
+import { COMMON_ENV, env } from './env.config';
 
-const rootPath = process.cwd()
+const rootPath = process.cwd();
+
+console.log('RootPath: ', rootPath);
 
 const config = {
   host: '127.0.0.1',
@@ -22,6 +24,6 @@ const config = {
 
   COMMON_ENV,
   env,
-}
+};
 
-export default config
+export default config;
