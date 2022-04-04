@@ -42,14 +42,13 @@ jobs:
       - name: build app
         run: |
           npm run build
-          ls ./release
         env:
           GH_TOKEN: ${{ secrets.ACCESS_TOKEN }}
 
       # step5: cleanup artifacts in dist_electron
       - name: cleanup artifacts
         run: |
-          npx rimraf "dist_electron/!(*.exe|*.dmg|*.yml|*.blockmap|*.yaml)"
+          npm run clean
 
       # step6: upload artifacts
       - name: upload artifacts
