@@ -50,3 +50,5 @@ export const DEFAULT_CREATE_CONFIG: CreateConfig = {
   delayToShow: 0,
   single: true,
 };
+
+export const OSS_PREFIX = process.env.NODE_ENV === 'production' ? 'drama' : 'test';

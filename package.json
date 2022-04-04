@@ -1,7 +1,7 @@
 {
   "name": "StoryEditor",
   "appId": "com.harwordliu.StoryEditor",
-  "version": "1.0.0",
+  "version": "0.0.1",
   "buildVersion": "0001",
   "private": false,
   "main": "dist/main/main.js",
@@ -86,6 +86,8 @@
   },
   "homepage": "https://github.com/lanten/StoryEditor#readme",
   "dependencies": {
+    "@types/lodash": "^4.14.181",
+    "lodash": "^4.17.21",
     "rimraf": "^3.0.2"
   }
 }
