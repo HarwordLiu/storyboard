@@ -22,7 +22,7 @@ jobs:
     strategy:
       fail-fast: false
       matrix:
-      os: [macos-latest]
+        os: [macos-latest]
 
     # create steps
     steps:
