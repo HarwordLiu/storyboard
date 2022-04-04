@@ -1,7 +1,7 @@
 {
   "name": "StoryEditor",
   "appId": "com.harwordliu.StoryEditor",
-  "version": "0.0.2",
+  "version": "0.0.3",
   "buildVersion": "0001",
   "private": false,
   "main": "dist/main/main.js",
