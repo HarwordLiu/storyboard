@@ -1,5 +1,5 @@
 import path from 'path';
-import { BrowserWindow, BrowserWindowConstructorOptions } from 'electron';
+import { BrowserWindow, BrowserWindowConstructorOptions, dialog } from 'electron';
 import { enable as enableRemote } from '@electron/remote/main';
 
 import { log } from '../log';
@@ -145,4 +145,21 @@ export function activeWindow(key: RouteName): BrowserWindow | false {
   } else {
     return false;
   }
+}
+
+export async function showConfirmWindow(message: string): Promise<boolean> {
+  const { response } = await dialog.showMessageBox({
+    type: 'question',
+    message,
+    buttons: ['是', '否'],
+  });
+  return response === 0;
+}
+
+export async function showMessageWindow(message: string): Promise<void> {
+  await dialog.showMessageBox({
+    type: 'question',
+    message,
+    buttons: ['好'],
+  });
 }

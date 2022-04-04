@@ -1,16 +1,16 @@
-import * as tools from './tools'
-import { store } from './store'
-import * as api from './api'
+import * as tools from './tools';
+import { store } from './store';
+import * as api from './api';
 
 export async function initMain(): Promise<void> {
   return new Promise(async (resolve) => {
     // @ts-ignore
-    global.__$tools = tools
+    global.__$tools = tools;
     // @ts-ignore
-    global.__$api = api
+    global.__$api = api;
     // @ts-ignore
-    global.__$store = store
-
-    resolve()
-  })
+    global.__$store = store;
+    tools.autoCheckUpdate();
+    resolve();
+  });
 }

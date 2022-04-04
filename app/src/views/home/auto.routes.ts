@@ -13,7 +13,6 @@ const routes: RouteConfig[] = [
       showSidebar: true,
       showCustomTitlebar: true,
       saveWindowBounds: true,
-      openDevTools: true,
     },
   },
 ];

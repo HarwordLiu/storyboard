@@ -87,6 +87,7 @@
   "homepage": "https://github.com/lanten/StoryEditor#readme",
   "dependencies": {
     "@types/lodash": "^4.14.181",
+    "electron-updater": "^4.6.5",
     "lodash": "^4.17.21",
     "rimraf": "^3.0.2"
   }
