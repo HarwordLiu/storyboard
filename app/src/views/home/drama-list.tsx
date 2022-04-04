@@ -26,7 +26,7 @@ export default class DramaList extends React.Component<DramaProps> {
     const { dramaList } = this.state;
     return (
       <div>
-        <Button>创建</Button>
+        <Button style={{ display: 'flex', margin: '0 auto' }}>创建</Button>
         <List
           size="small"
           bordered
